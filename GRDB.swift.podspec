@@ -13,7 +13,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
   s.osx.deployment_target = '10.9'
   s.watchos.deployment_target = '2.0'
-  s.module_map = 'Support/module.modulemap'
   s.default_subspec  = 'standard'
   
   s.subspec 'standard' do |ss|
