@@ -10,7 +10,11 @@ import Foundation
 extension FetchableRecord where Self: Decodable {
     public init(row: Row) {
         let decoder = RowDecoder<Self>(row: row, codingPath: [])
-        try! self.init(from: decoder)
+        do {
+            try self.init(from: decoder)
+        } catch {
+            fatalError("Failed to decode row: \(row). Error: \(error)")
+        }
     }
 }
 
